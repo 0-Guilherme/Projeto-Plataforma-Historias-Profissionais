@@ -1,0 +1,620 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header h2 {
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Form Styles */
+.form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.btn-primary {
+    background: #3498db;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+}
+
+.login-link,
+.register-link {
+    text-align: center;
+    margin-top: 1rem;
+    color: #666;
+}
+
+.login-link a,
+.register-link a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.login-link a:hover,
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Feed Styles */
+.feed-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.post-creator {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.post-creator h3 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.post-creator textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    margin-bottom: 1rem;
+}
+
+.post-creator textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.posts-feed {
+    space-y: 1rem;
+}
+
+.post-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.post-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.post-header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.user-info h4 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+.user-details {
+    margin: 0.25rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.status-tag {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status-tag.disponivel_contato {
+    background: #e8f5e8;
+    color: #27ae60;
+}
+
+.status-tag.recrutador {
+    background: #e1f5fe;
+    color: #0277bd;
+}
+
+.status-tag.indisponivel {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.status-tag.large {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.post-date {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.post-content {
+    padding: 1rem 1.5rem;
+}
+
+.post-content p {
+    margin: 0;
+    white-space: pre-line;
+}
+
+.post-actions {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 1rem;
+}
+
+.like-btn,
+.comment-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.like-btn:hover,
+.comment-btn:hover {
+    background: #f8f9fa;
+}
+
+.like-btn.liked {
+    color: #e74c3c;
+}
+
+.comments-section {
+    border-top: 1px solid #eee;
+    padding: 1rem 1.5rem;
+    background: #f8f9fa;
+}
+
+.comment-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.comment-form input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.comment-form button {
+    padding: 0.5rem 1rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.comment {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment strong {
+    color: #2c3e50;
+}
+
+.comment small {
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+/* Profile Styles */
+.profile-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.posts-content {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+.profile-header {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.profile-info h1 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+}
+
+.profile-details {
+    color: #666;
+    line-height: 1.8;
+}
+
+.status-badge {
+    text-align: right;
+}
+
+.profile-content {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.post-summary-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: background-color 0.2s;
+}
+
+.post-summary-link:hover {
+    background-color: #f8f9fa;
+}
+
+.post-summary-link:hover .post-summary {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.posts-section h3 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.posts-history {
+    space-y: 1rem;
+}
+
+.post-summary {
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.post-summary .post-content p {
+    margin-bottom: 0.5rem;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #666;
+    font-size: 0.85rem;
+    border-top: 1px solid #eee;
+    padding-top: 0.5rem;
+}
+
+.post-stats {
+    display: flex;
+    gap: 1rem;
+}
+
+.read-more {
+    color: #3498db;
+    cursor: pointer;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+.empty-state p {
+    margin-bottom: 1rem;
+}
+
+/* Edit Profile Styles */
+.edit-profile-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+}
+
+.edit-profile-section h3 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.edit-profile-form .form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.edit-profile-form .form-row .form-group {
+    flex: 1;
+}
+
+.edit-profile-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.edit-profile-form .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.edit-profile-form .form-group input,
+.edit-profile-form .form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.edit-profile-form .form-group input:focus,
+.edit-profile-form .form-group select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* Post Actions */
+.post-actions-menu {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.edit-post-btn,
+.delete-post-btn,
+.delete-comment-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.edit-post-btn:hover,
+.delete-post-btn:hover,
+.delete-comment-btn:hover {
+    background: #f8f9fa;
+}
+
+.delete-post-btn:hover,
+.delete-comment-btn:hover {
+    background: #ffe6e6;
+}
+
+.post-edit textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    margin-bottom: 0.5rem;
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-save {
+    background: #27ae60;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-cancel {
+    background: #95a5a6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-save:hover {
+    background: #229954;
+}
+
+.btn-cancel:hover {
+    background: #7f8c8d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .form-container {
+        padding: 1rem;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .status-badge {
+        text-align: left;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+    
+    .post-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .edit-profile-form .form-row {
+        flex-direction: column;
+    }
+}
