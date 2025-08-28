@@ -1,5 +1,5 @@
 # Overview - Projeto Plataforma Historias Profissionais
-# 
+# Networking Profissional
 
 This is a Brazilian professional networking platform that allows users to create accounts, log in, and potentially connect with other professionals. The application focuses on career networking with features for displaying professional status, company information, and job opportunities. It's built as a web application with a clean, modern interface targeting professionals.
 
