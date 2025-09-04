@@ -50,3 +50,4 @@ Preferred communication style: Simple, everyday language.
 ## Development Dependencies
 - **Web Server**: Apache or Nginx for serving PHP content
 - **PHP Runtime**: Server-side processing environment
+teste
