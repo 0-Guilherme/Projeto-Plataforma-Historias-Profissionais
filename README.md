@@ -1,52 +1,197 @@
-# Overview - Projeto Plataforma Historias Profissionais
+
 # Networking Profissional
+![PHP](https://img.shields.io/badge/PHP-8.0+-blue)
+![Status](https://img.shields.io/badge/status-Em%20Desenvolvimento-yellow)
 
-This is a Brazilian professional networking platform that allows users to create accounts, log in, and potentially connect with other professionals. The application focuses on career networking with features for displaying professional status, company information, and job opportunities. It's built as a web application with a clean, modern interface targeting professionals.
+Uma plataforma de networking profissional desenvolvida em PHP puro, permitindo que profissionais se conectem, compartilhem experiências e encontrem oportunidades de forma prática e segura.
 
-# User Preferences
+---
 
-Preferred communication style: Simple, everyday language.
+## Índice
+1. [Sobre](#sobre)
+2. [Pré-requisitos](#pré-requisitos)
+3. [Instalação Rápida](#instalação-rápida)
+4. [Credenciais de Teste](#credenciais-de-teste)
+5. [Funcionalidades](#funcionalidades)
+6. [Segurança](#segurança)
+7. [Estrutura do Projeto](#estrutura-do-projeto)
+8. [Banco de Dados](#banco-de-dados)
+9. [Personalização](#personalização)
+10. [Solução de Problemas](#solução-de-problemas)
+11. [Equipe](#equipe)
 
-# System Architecture
 
-## Frontend Architecture
-- **Static HTML/CSS Frontend**: Uses traditional HTML forms with server-side processing
-- **Responsive Design**: Mobile-first approach with viewport meta tags and flexible CSS
-- **Form-Based Interaction**: Registration and login handled through HTML forms with POST methods
-- **Modern CSS**: Uses system fonts and clean, professional styling with a blue color scheme
 
-## Backend Architecture
-- **PHP Server-Side Processing**: Forms submit to PHP scripts in an `auth/` directory
-- **Session-Based Authentication**: Likely uses PHP sessions for user management
-- **Form Validation**: Client-side required fields with server-side processing
-- **MVC-Style Structure**: Separation of concerns with dedicated auth directory for authentication logic
+---
 
-## User Management System
-- **Registration Flow**: Comprehensive user signup with professional information
-- **Login System**: Email/password authentication
-- **Professional Profiles**: Captures company, job title, and professional status
-- **Status Tags**: Users can indicate availability for networking opportunities
+## Sobre
+O **Networking Profissional** é uma aplicação simples e robusta, que tem como objetivo aproximar profissionais e empresas.  
+Com ela, você pode criar um perfil, publicar conteúdos, interagir em um feed e indicar sua situação profissional através de status personalizados.
 
-## Design Patterns
-- **Traditional Web Application**: Server-rendered pages with form submissions
-- **Progressive Enhancement**: Basic HTML functionality with CSS styling enhancements
-- **Semantic HTML**: Proper form structure with labels and accessibility considerations
+---
 
-# External Dependencies
+## Pré-requisitos
+Antes de começar, certifique-se de ter os seguintes itens instalados:
 
-## Core Technologies
-- **PHP**: Server-side scripting for authentication and form processing
-- **HTML5**: Modern markup with semantic elements
-- **CSS3**: Advanced styling with flexbox and modern properties
+- PHP **8.0 ou superior**
+- MySQL **5.7 ou superior**
+- Extensões habilitadas no PHP:
+  - `PDO`
+  - `mbstring`
+  - `session`
+- Servidor local (como XAMPP, Laragon, WAMP, etc.)
+- Navegador atualizado (Google Chrome, Firefox, etc.)
 
-## Potential Database Integration
-- **User Storage**: Likely MySQL or similar database for user accounts and professional information
-- **Session Management**: PHP session handling for authentication state
+---
 
-## Browser Compatibility
-- **Modern Web Standards**: Uses contemporary CSS properties and HTML5 features
-- **Cross-Platform Fonts**: System font stack for optimal rendering across devices
+## Instalação Rápida
+1. **Clone este repositório:**
+   ```bash
+   git clone https://github.com/seuusuario/Projeto-Plataforma-Historias-Profissionais.git
+   ```
 
-## Development Dependencies
-- **Web Server**: Apache or Nginx for serving PHP content
-- **PHP Runtime**: Server-side processing environment
+2. **Acesse a pasta do projeto:**
+   ```bash
+   cd Projeto-Plataforma-Historias-Profissionais
+   ```
+
+3. **Configure as credenciais do banco de dados no arquivo:**
+   ```
+   config/database.php
+   ```
+
+4. **Execute o script de configuração:**
+   ```bash
+   php setup_database.php
+   ```
+
+5. **Inicie o servidor PHP embutido:**
+   ```bash
+   php -S localhost:8000
+   ```
+
+6. **Acesse o sistema no navegador:**
+   ```
+   http://localhost:8000
+   ```
+
+---
+
+## Credenciais de Teste
+Estas contas são criadas automaticamente pelo `setup_database.php` para demonstração inicial:
+
+| Email           | Senha    | Status                    |
+|-----------------|----------|---------------------------|
+| joao@email.com  | password | Disponível para contato   |
+| maria@email.com | password | Recrutadora               |
+| pedro@email.com | password | Procurando oportunidades  |
+
+---
+
+## Funcionalidades
+- ✅ **Cadastro e login de usuários** – Criação de conta com autenticação segura.  
+- ✅ **Feed interativo** – Publicações com curtidas e comentários.  
+- ✅ **Perfis editáveis** – Atualize foto, bio e status profissional.  
+- ✅ **Sistema de status** – Indique sua disponibilidade no mercado.  
+- ✅ **Interface responsiva** – Totalmente adaptável para desktop e mobile.  
+- ✅ **Segurança robusta** – Proteções contra SQL Injection e XSS.
+
+---
+
+## Segurança
+O projeto segue boas práticas de segurança em PHP:
+
+- Senhas criptografadas com `password_hash()`.
+- Proteção contra SQL Injection com **prepared statements**.
+- Sanitização de dados com `htmlspecialchars()`.
+- Sessões seguras com regeneração de ID (`session_regenerate_id()`).
+- Validação rigorosa de entradas em todos os formulários.
+
+---
+
+## Estrutura do Projeto
+```
+Projeto-Plataforma-Historias-Profissionais/
+├── actions/ # Processamento de ações
+├── auth/ # Sistema de autenticação
+├── config/ # Configurações
+├── includes/ # Arquivos incluídos
+├── feed.php # Página principal
+├── index.php # Página inicial
+├── inscricao.html # Registro
+├── login.html # Login
+├── perfil.php # Perfil
+├── setup_database.php # Configuração automática
+├── security_check.php # Verificação de segurança
+├── style.css # Estilos
+├── README.md # Documentação
+└── CHANGELOG.md # Registro de mudanças
+```
+---
+
+## Banco de Dados
+
+### Estrutura das tabelas:
+- **`users`** – Armazena informações de login e perfil.  
+- **`posts`** – Publicações feitas pelos usuários.  
+- **`likes`** – Controle de curtidas nos posts.  
+- **`comments`** – Comentários em postagens.
+
+### Configuração padrão:
+| Configuração | Valor               |
+|--------------|---------------------|
+| Host         | localhost           |
+| Usuário      | root                |
+| Senha        | (vazia)             |
+| Banco        | networking_platform |
+
+> Dica: Gere o banco automaticamente executando `php setup_database.php`.
+
+---
+
+## Personalização
+
+### Status Profissionais Disponíveis:
+- `disponivel_contato` — Disponível para contato  
+- `procurando_oportunidades` — Procurando oportunidades  
+- `recrutador` — Recrutador  
+- `empregado` — Empregado  
+
+### Cores e Estilos:
+Edite o arquivo `style.css` para personalizar:
+- Paleta de cores
+- Tipografia
+- Layout responsivo
+
+---
+
+## Solução de Problemas
+
+### 1. Erro de conexão com o banco de dados
+- Verifique se o MySQL está rodando.
+- Confirme as credenciais em `config/database.php`.
+- Rode novamente o script `setup_database.php`.
+
+### 2. Páginas não carregam
+- Certifique-se de que o PHP está instalado e atualizado.
+- Verifique se a extensão `PDO` está habilitada.
+- Consulte os logs de erro do servidor.
+
+### 3. Problemas com sessão
+- Confirme se o PHP tem permissão para salvar sessões.
+- Garanta que `session_start()` esteja presente nos arquivos principais.
+
+---
+
+## Equipe
+
+**Grupo 12**  
+Este projeto foi desenvolvido pelo Grupo 12 como parte da disciplina Projeto Integrador: Desenvolvimento Orientado a Dispositivos Móveis e Baseados na Web, no Senac.
+
+- Henrique Dias Van Rossum da Silva  
+- Jadson dos Santos Machado  
+- Erasmo Eloi da Hora Neto  
+- Lara Eugenia Campello da Silva Moreira  
+- Ana Quezia Flores Costa e Silva  
+- Guilherme Ramos de Oliveira
+
