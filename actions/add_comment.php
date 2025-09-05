@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once '../config/session_config.php';
 require_once '../config/database.php';
 
 header('Content-Type: application/json');
@@ -17,6 +18,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if (!$post_id || empty($comentario)) {
         echo json_encode(['success' => false, 'message' => 'Dados inválidos']);
+        exit();
+    }
+    
+    // Validate comment length
+    if (strlen($comentario) > 1000) {
+        echo json_encode(['success' => false, 'message' => 'Comentário muito longo']);
+        exit();
+    }
+    
+    // Verify that the post exists
+    $stmt = $pdo->prepare("SELECT id FROM posts WHERE id = ?");
+    $stmt->execute([$post_id]);
+    if (!$stmt->fetch()) {
+        echo json_encode(['success' => false, 'message' => 'Postagem não encontrada']);
         exit();
     }
     

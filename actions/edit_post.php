@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once '../config/session_config.php';
 require_once '../config/database.php';
 
 // Check if user is logged in
@@ -15,6 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if (empty($conteudo)) {
         $_SESSION['post_error'] = "O conteúdo da postagem não pode estar vazio";
+        header('Location: ../feed.php');
+        exit();
+    }
+    
+    // Validate content length
+    if (strlen($conteudo) > 5000) {
+        $_SESSION['post_error'] = "A postagem é muito longa. Máximo 5000 caracteres.";
         header('Location: ../feed.php');
         exit();
     }
