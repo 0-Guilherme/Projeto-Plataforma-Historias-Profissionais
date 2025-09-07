@@ -63,8 +63,26 @@ body {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-help {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
 }
 
 .form-container h1 {
@@ -100,6 +118,23 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.form-group select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .btn-primary {
@@ -224,9 +259,19 @@ body {
     color: #27ae60;
 }
 
+.status-tag.procurando_oportunidades {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
 .status-tag.recrutador {
     background: #e1f5fe;
     color: #0277bd;
+}
+
+.status-tag.empregado {
+    background: #f3e5f5;
+    color: #7b1fa2;
 }
 
 .status-tag.indisponivel {
@@ -448,6 +493,29 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Error and Success Messages */
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 1px solid #f5c6cb;
+}
+
+.error-message p {
+    margin: 0.25rem 0;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 1px solid #c3e6cb;
+}
+
 /* Edit Profile Styles */
 .edit-profile-section {
     margin-bottom: 2rem;
@@ -592,6 +660,11 @@ body {
     
     .form-container {
         padding: 1rem;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
     }
     
     .profile-header {
