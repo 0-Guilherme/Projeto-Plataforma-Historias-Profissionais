@@ -189,7 +189,6 @@ Edite o arquivo `style.css` para personalizar:
 Este projeto foi desenvolvido pelo Grupo 12 como parte da disciplina Projeto Integrador: Desenvolvimento Orientado a Dispositivos Móveis e Baseados na Web, no Senac.
 
 - Henrique Dias Van Rossum da Silva  
-- Jadson dos Santos Machado  
 - Erasmo Eloi da Hora Neto  
 - Lara Eugenia Campello da Silva Moreira  
 - Ana Quezia Flores Costa e Silva  
